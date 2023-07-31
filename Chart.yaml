@@ -1,0 +1,4 @@
+apiVersion: v2
+name: hello-job
+description: hello world k8s cronjob with pvc on gke
+version: 0.0.1

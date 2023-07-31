@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-viewer
+spec:
+  containers:
+  - image: busybox
+    name: hello-viewer
+    command:
+    - tail
+    - -f
+    - /dev/null
+    volumeMounts:
+    - mountPath: /pvc
+      name: my-volume
+  volumes:
+  - name: my-volume
+    persistentVolumeClaim:
+      claimName: hello-pvc
+
